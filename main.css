@@ -1,0 +1,84 @@
+*{
+    --big-radius: 10;
+    --small-radius: 9;
+
+    --send-color: green;
+    --receive-color: red;
+
+    --left: 110;
+    --center: 140;
+    --right: 200;
+}
+
+.circle.big{
+    r: var(--big-radius);
+}
+
+.circle.small{
+    r: var(--small-radius);
+}
+
+.circle.send{
+    fill: var(--send-color);
+}
+
+.circle.receive{
+    fill: var(--receive-color);
+}
+
+.circle.send.small,
+.circle.receive{
+    opacity: 0;
+}
+
+.circle.send.big{
+    animation: 
+        move-center 1s forwards,
+        disappear 0s 1.5s forwards;
+    cx: var(--left);
+}
+
+.circle.send.small{
+    animation: 
+        appear 0s 1.5s forwards,
+        move-right 1s 1.5s forwards,
+        disappear 0s 2.5s forwards;
+    animation-iteration-count: 1;
+    cx: var(--center);
+}
+
+@keyframes move-center{
+    0%{
+        cx: var(--left);
+    }
+    100%{
+        cx: var(--center);
+    }
+}
+
+@keyframes move-right{
+    0%{
+        cx: var(--center);
+    }
+    100%{
+        cx: var(--right);
+    }
+}
+
+@keyframes disappear{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

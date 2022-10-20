@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./main.css" />
+    </head>
+    <body>
+
+<svg width="300" height="80" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+    <title>Transmisión</title>
+    <desc>Ejemplo de un svg con una animación que simula la transmisión de datos</desc>    
+    <g id="router">       
+        <rect x="10" y="10" width="80" height="40" rx="10" style="stroke:black; fill: transparent; stroke-width:4px"/>       
+        <rect x="25" y="25" width="10" height="10" rx="2" style="stroke:black; fill: transparent; stroke-width:2px"> 
+        </rect>
+    <rect x="45" y="25" width="10" height="10" rx="2" style="stroke:black; fill: transparent; stroke-width:2px">
+    </rect>
+    <rect x="65" y="25" width="10" height="10" rx="2" style="stroke:black; fill: transparent; stroke-width:2px"/>    
+    </g>
+    <use x="200" y="0" xlink:href="#router" />
+    <!-- movimiento derecha -->    
+    <circle class="circle send big" cy="30">
+    </circle>
+    <circle class="circle send small" cy="30">
+    </circle>
+    <!-- movimiento izquierda -->  
+    <circle class="circle receive big"
+            cx="190" cy="30">
+    </circle>
+    <circle class="circle receive small"
+            cx="160" cy="30">
+    </circle>    
+</svg>
+    </body>
+</html>
