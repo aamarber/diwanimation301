@@ -5,7 +5,7 @@
     --send-color: green;
     --receive-color: red;
 
-    --left: 110;
+    --left: 100;
     --center: 140;
     --right: 200;
 }
@@ -32,53 +32,111 @@
 }
 
 .circle.send.big{
-    animation: 
-        move-center 1s forwards,
-        disappear 0s 1.5s forwards;
+    animation: big-send 5s both;
+    animation-iteration-count: infinite;
     cx: var(--left);
 }
 
-.circle.send.small{
-    animation: 
-        appear 0s 1.5s forwards,
-        move-right 1s 1.5s forwards,
-        disappear 0s 2.5s forwards;
-    animation-iteration-count: 1;
+ .circle.send.small{
+    animation: small-send 5s both;
+    animation-iteration-count: infinite;
     cx: var(--center);
 }
 
-@keyframes move-center{
+
+.circle.receive.big{
+    animation: big-receive 5s both;
+    animation-iteration-count: infinite;
+    cx: var(--right);
+}
+
+.circle.receive.small{
+    animation: small-receive 5s both;
+    animation-iteration-count: infinite;
+    cx: var(--center);
+} 
+
+@keyframes big-send{
+    /*Start*/
     0%{
         cx: var(--left);
     }
-    100%{
+    39.9999%{
+        opacity: 1;
+    }
+    /*END*/
+    40%{
         cx: var(--center);
+        opacity: 0;
+        animation-timing-function: linear;
+    }
+    99.9999%{
+        opacity: 0;
+    }
+    /*RESTART*/
+    100%{
+        opacity: 1;
     }
 }
 
-@keyframes move-right{
+@keyframes small-send{
     0%{
-        cx: var(--center);
+        opacity: 0;
     }
-    100%{
+    /*Start*/
+    39.9999%{
+        opacity: 0;
+    }
+    40%{
+        cx: var(--center);
+        opacity: 1;
+    }
+    59.9999%{
+        opacity: 1;
+    }
+    60%{
+        cx: var(--right);
+        opacity: 0;
+    }
+}
+
+@keyframes big-receive{
+    0%{
+        opacity: 0;
         cx: var(--right);
     }
+    59.9999%{
+        opacity: 0;
+    }
+    60%{
+        cx: var(--right);
+        opacity: 1;
+    }
+    79.9999%{
+        opacity: 1;
+    }
+    80%{
+        cx: var(--center);
+        opacity: 0;
+    }
 }
-
-@keyframes disappear{
+@keyframes small-receive{
     0%{
+        opacity: 0;
+        cx: var(--right);
+    }
+    79.9999%{
+        opacity: 0;
+    }
+    80%{
+        cx: var(--center);
+        opacity: 1;
+    }
+    99.9999%{
         opacity: 1;
     }
     100%{
         opacity: 0;
-    }
-}
-
-@keyframes appear{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
+        cx: var(--left);
     }
 }
