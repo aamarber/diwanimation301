@@ -8,6 +8,7 @@
     --left: 100;
     --center: 140;
     --right: 200;
+    --transmission-duration: 
 }
 
 .circle.big{
@@ -29,6 +30,12 @@
 .circle.send.small,
 .circle.receive{
     opacity: 0;
+}
+
+.led{
+    stroke:black;
+    fill: transparent;
+    stroke-width:2px;
 }
 
 .circle.send.big{
@@ -54,7 +61,17 @@
     animation: small-receive 5s both;
     animation-iteration-count: infinite;
     cx: var(--center);
-} 
+}
+
+.send.led{
+    animation: send-led-blink 5s both;
+    animation-iteration-count: infinite;
+}
+
+.receive.led{
+    animation: receive-led-blink 5s both;
+    animation-iteration-count: infinite;
+}
 
 @keyframes big-send{
     /*Start*/
@@ -138,5 +155,80 @@
     100%{
         opacity: 0;
         cx: var(--left);
+    }
+}
+
+@keyframes send-led-blink{
+    0%{
+        fill: none;
+    }
+    5%{
+        fill: var(--send-color);
+    }
+    10%{
+        fill: none
+    }
+    15%{
+        fill: var(--send-color);
+    }
+    20%{
+        fill: none
+    }
+    25%{
+        fill: var(--send-color);
+    }
+    30%{
+        fill: none
+    }
+    35%{
+        fill: var(--send-color);
+    }
+    40%{
+        fill: none
+    }
+    45%{
+        fill: var(--send-color);
+    }
+    50%{
+        fill: none
+    }
+    55%{
+        fill: var(--send-color);
+    }
+    60%{
+        fill: none;
+    }
+}
+
+@keyframes receive-led-blink{
+    0%{
+        fill: none;
+    }
+    60%{
+        fill: none;
+    }
+    65%{
+        fill: var(--receive-color);
+    }
+    70%{
+        fill: none
+    }
+    75%{
+        fill: var(--receive-color);
+    }
+    80%{
+        fill: none
+    }
+    85%{
+        fill: var(--receive-color);
+    }
+    90%{
+        fill: none
+    }
+    95%{
+        fill: var(--receive-color);
+    }
+    100%{
+        fill: none
     }
 }

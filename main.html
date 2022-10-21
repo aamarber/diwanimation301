@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./main.css" />
+        <title>Transmisión</title>
     </head>
     <body>
 
@@ -8,10 +9,9 @@
     <title>Transmisión</title>
     <desc>Ejemplo de un svg con una animación que simula la transmisión de datos</desc>    
     <g id="router">       
-        <rect x="10" y="10" width="80" height="40" rx="10" style="stroke:black; fill: transparent; stroke-width:4px"/>       
-        <rect x="25" y="25" width="10" height="10" rx="2" style="stroke:black; fill: transparent; stroke-width:2px"> 
-        </rect>
-    <rect x="45" y="25" width="10" height="10" rx="2" style="stroke:black; fill: transparent; stroke-width:2px">
+        <rect x="10" y="10" width="80" height="40" rx="10" style="stroke:black; fill: transparent; stroke-width:4px"/>
+        <rect class="send led" x="25" y="25" width="10" height="10" rx="2"/>
+        <rect class="receive led" x="45" y="25" width="10" height="10" rx="2">
     </rect>
     <rect x="65" y="25" width="10" height="10" rx="2" style="stroke:black; fill: transparent; stroke-width:2px"/>    
     </g>
